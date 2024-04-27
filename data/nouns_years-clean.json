@@ -1,0 +1,44 @@
+{
+    "2018": {
+        "sciopero": 60,
+        "migrante": 56,
+        "treno": 40,
+        "ponte": 25,
+        "incidente": 24
+    },
+    "2019": {
+        "migrante": 77,
+        "sciopero": 72,
+        "nave": 48,
+        "incendio": 38,
+        "corte": 34
+    },
+    "2020": {
+        "coronavirus": 512,
+        "scuola": 43,
+        "regione": 40,
+        "restrizione": 29,
+        "mascherina": 26
+    },
+    "2021": {
+        "coronavirus": 453,
+        "vaccino": 63,
+        "regione": 63,
+        "zona": 63,
+        "vaccinazione": 56
+    },
+    "2022": {
+        "coronavirus": 92,
+        "provincia": 27,
+        "indagine": 27,
+        "incendio": 26,
+        "gas": 25
+    },
+    "2023": {
+        "migrante": 66,
+        "sciopero": 37,
+        "carcere": 34,
+        "incendio": 33,
+        "incidente": 32
+    }
+}

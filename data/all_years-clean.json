@@ -1,0 +1,48 @@
+{
+    "nouns": {
+        "coronavirus": 1058,
+        "migrante": 262,
+        "governo": 257,
+        "sciopero": 212,
+        "indagine": 144,
+        "incendio": 143,
+        "scuola": 133,
+        "carcere": 126,
+        "nave": 124,
+        "omicidio": 122
+    },
+    "cities": {
+        "Roma": 385,
+        "Milano": 330,
+        "Venezia": 101,
+        "Torino": 100,
+        "Napoli": 93,
+        "Catania": 69,
+        "Genova": 68,
+        "Firenze": 61,
+        "Palermo": 52,
+        "Bologna": 49,
+        "Messina": 43,
+        "Bergamo": 30,
+        "Siena": 29,
+        "Bari": 25,
+        "Trieste": 25,
+        "Verona": 22,
+        "Lodi": 21,
+        "Taranto": 20,
+        "Piacenza": 19,
+        "Brescia": 17
+    },
+    "verbs": {
+        "morire": 443,
+        "arrestare": 234,
+        "sapere": 178,
+        "condannare": 146,
+        "indagare": 103,
+        "chiedere": 101,
+        "uccidere": 97,
+        "accusare": 94,
+        "chiudere": 90,
+        "tornare": 77
+    }
+}
