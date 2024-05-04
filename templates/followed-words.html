@@ -1,0 +1,42 @@
+{% extends "_template.html" %}
+
+{% block title %}Parole seguite{% endblock %}
+
+{% block content %}
+  <div class="container" style="max-width: 850px;">
+    <span class="badge rounded-pill text-bg-light"><a class="link-secondary text-decoration-none" href="{{ url_for('home') }}">← Home</a></span>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h2 class="fw-semibold">Parole seguite</h2>
+      <span class="badge rounded-pill text-bg-success"><a class="link-light text-decoration-none" href="{{ url_for('data', name='followed-words', format='json') }}">raw data</a></span>
+    </div>
+    <p>Abbiamo seguito alcune delle parole più comuni anno per anno per vedere come cambiava la loro frequenza nel corso dei 6 anni in analisi.</p>
+    <br>
+    <h3>Coronavirus</h3>
+    <p>Assente ovviamente nel 2018 e 2019, esplode nel 2020, persiste nel 2021 e rimane decisamente rilevante ancora nel 2022. Nel 2023 sparisce dai titoli.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-coronavirus.png') }}" alt="followed word coronavirus graph">
+    <hr><br>
+    <h3>Sciopero</h3>
+    <p>Molto presente nel 2018-2019, la stagione del COVID lo riduce al minimo e solo dal 2023 ricomincia ad apparire con più frequenza, senza però ancora avvicinarsi ai livelli del 2018.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-sciopero.png') }}" alt="followed word sciopero graph">
+    <hr><br>
+    <h3>Incendio</h3>
+    <p>Una tematica sempre attuale in Italia, che infatti mantiene la sua presenza nei titoli fondamentalmente ogni anno, oscurata solo nel picco della pandemia.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-incendio.png') }}" alt="followed word incendio graph">
+    <hr><br>
+    <h3>Scuola</h3>
+    <p>L'argomento raggiunge il suo apice nel 2020, anno segnato dalle sfide educative imposte dalla pandemia. Successivamente, la frequenza di menzione decresce progressivamente, indicando una possibile stabilizzazione delle problematiche scolastiche o una riduzione del loro impatto mediatico nel 2023.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-scuola.png') }}" alt="followed word scuola graph">
+    <hr><br>
+    <h3>Carcere</h3>
+    <p>La parola mantiene una certa costanza nel periodo tra il 2018 e il 2022, con lievi fluttuazioni. Tuttavia nel 2023 si osserva un marcato aumento, segnalando un rinnovato interesse nei confronti di questioni legate alla giustizia e alle condizioni carcerarie.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-carcere.png') }}" alt="followed word carcere graph">
+    <hr><br>
+    <h3>Terremoto</h3>
+    <p>Nonostante la sua natura episodica, il termine "terremoto" mostra una sorprendente stabilità nelle menzioni annue, con un lieve calo solo nel 2021. Questo suggerisce una costante rilevanza del tema nei media, mantenendosi in equilibrio senza grandi picchi di attenzione nel periodo analizzato.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-terremoto.png') }}" alt="followed word terremoto graph">
+    <hr><br>
+    <h3>'Ndrangheta</h3>
+    <p>Pur non dominando frequentemente i titoli, la presenza della parola fluttua nei primi anni e poi dal 2021, si stabilizza, indicando un focus persistente sulla criminalità organizzata in Italia.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/followed-ndrangheta.png') }}" alt="followed word ndrangheta graph">
+  </div>
+{% endblock %}

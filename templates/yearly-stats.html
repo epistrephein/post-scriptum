@@ -1,0 +1,38 @@
+{% extends "_template.html" %}
+
+{% block title %}Statistiche per anno{% endblock %}
+
+{% block content %}
+  <div class="container" style="max-width: 850px;">
+    <span class="badge rounded-pill text-bg-light"><a class="link-secondary text-decoration-none" href="{{ url_for('home') }}">← Home</a></span>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h2 class="fw-semibold">Statistiche per anno</h2>
+      <span class="badge rounded-pill text-bg-success"><a class="link-light text-decoration-none" href="{{ url_for('data', name='yearly-stats', format='json') }}">raw data</a></span>
+    </div>
+    <p>Abbiamo misurato, per ciascun anno, quali sostantivi ricorrono più spesso sui titoli. Come per le statische globali, le parole sono state lemmatizzate per facilitare il conteggio.</p>
+    <br>
+    <h3>2018</h3>
+    <p>Anno di scioperi e di crisi dei migranti, temi ricorrenti nell'interesse mediatico. Interessante la presenza massiccia della parola "ponte", probabilmente legata al crollo del Ponte Morandi in agosto.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2018.png') }}" alt="yearly nouns 2018 graph">
+    <hr><br>
+    <h3>2019</h3>
+    <p>Non molto lontano dai risultati del 2018, con un interessante scambio tra "treno" e "nave".</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2019.png') }}" alt="yearly nouns 2019 graph">
+    <hr><br>
+    <h3>2020</h3>
+    <p>Primo anno di pandemia, l'unica parola presente è fondamentalmente "coronavirus". Le altre parole classificate sono tutte relate, in un modo o nell'altro, al discorso sull'emergenza sanitaria.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2020.png') }}" alt="yearly nouns 2020 graph">
+    <hr><br>
+    <h3>2021</h3>
+    <p>Secondo anno di pandemia, il "coronavirus" rimane ampiamente in testa seguito dalla novità fondamentale nel contesto pandemico, l'arrivo del "vaccino" e delle "zone".</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2021.png') }}" alt="yearly nouns 2021 graph">
+    <hr><br>
+    <h3>2022</h3>
+    <p>Nel contesto pandemico non ancora terminato, il "coronavirus" perde decisamente terreno rispetto all'anno precedente ma domina comunque la classifica. Il "gas" diventa argomento di dibattito visto l'aumento spropositato dei costi.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2022.png') }}" alt="yearly nouns 2022 graph">
+    <hr><br>
+    <h3>2023</h3>
+    <p>Con l'emergenza sanitaria terminata, il discorso torna su tematiche più comuni come nel 2018, con un interessante scambio, in contesto giudiziario, di "corte" in "carcere".</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/yearly-nouns-2023.png') }}" alt="yearly nouns 2023 graph">
+  </div>
+{% endblock %}

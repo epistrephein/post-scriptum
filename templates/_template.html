@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Post Scriptum{% endblock %}</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+  <header>
+    <div class="px-4 py-5 text-center">
+      <a href="{{ url_for('home') }}">
+        <img class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img/icon-newspaper-color.png') }}" alt="newspaper icon" width="72" height="72">
+      </a>
+      <h1 class="display-5 fw-bold text-body-emphasis">Post Scriptum</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Alcune analisi linguistiche dei titoli del giornale online <a href="https://www.ilpost.it/" target="_blank">Il Post</a> per gli anni 2018-2023.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="mb-5">
+    {% block content %}
+    {% endblock %}
+    <br>
+  </main>
+
+  <footer class="footer fixed-bottom mt-5 pt-3 pb-1 bg-light">
+    <div class="container">
+      <p class="text-body-tertiary text-center small">
+        sviluppato da Tommaso Barbato
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

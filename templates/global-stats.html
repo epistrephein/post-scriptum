@@ -1,0 +1,26 @@
+{% extends "_template.html" %}
+
+{% block title %}Statistiche globali{% endblock %}
+
+{% block content %}
+  <div class="container" style="max-width: 850px;">
+    <span class="badge rounded-pill text-bg-light"><a class="link-secondary text-decoration-none" href="{{ url_for('home') }}">← Home</a></span>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h2 class="fw-semibold">Statistiche globali</h2>
+      <span class="badge rounded-pill text-bg-success"><a class="link-light text-decoration-none" href="{{ url_for('data', name='global-stats', format='json') }}">raw data</a></span>
+    </div>
+    <p>Per l'analisi globale sull'arco di tutti i 6 anni presi in considerazione, esaminiamo tre classi di parole: sostantivi, verbi e nomi di città. Per il calcolo dei primi due abbiamo proceduto alla lemmatizzazione dei termini incontrati per facilitare il conto.</p>
+    <br>
+    <h3>Sostantivi</h3>
+    <p>La classifica è dominata dagli inevitabili discorsi sul COVID, che conta quasi il quintuplo di occorrenze del secondo termine: una circostanza inevitabile considerato il periodo dell'analisi.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/global-nouns.png') }}" alt="global nouns graph">
+    <hr><br>
+    <h3>Verbi</h3>
+    <p>Anche qui, nonostante un meno specifico "morire" al primo posto, è probabile che molte delle occorrenze derivino da discorsi relativi al COVID. Interessanti alcune delle restanti posizioni molto legate a vicende giudiziarie.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/global-verbs.png') }}" alt="global verbs graph">
+    <hr><br>
+    <h3>Città</h3>
+    <p>Abbiamo misurato anche le 20 città più citate all'interno dei titoli. Con non troppa sorpresa, i due poli d'Italia, Roma e Milano, stravincono, con un leggero vantaggio della capitale. Probabilmente anche in questo caso la sproporzione è influenzata dal COVID, che ha visto i due ospedali Spallanzani di Roma e Sacco di Milano al centro dell'emergenza sanitaria.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/global-cities.png') }}" alt="global cities graph">
+  </div>
+{% endblock %}

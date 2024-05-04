@@ -1,0 +1,16 @@
+{% extends "_template.html" %}
+
+{% block title %}Legge di Zipf{% endblock %}
+
+{% block content %}
+  <div class="container" style="max-width: 850px;">
+    <span class="badge rounded-pill text-bg-light"><a class="link-secondary text-decoration-none" href="{{ url_for('home') }}">← Home</a></span>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h2 class="fw-semibold">Legge di Zipf</h2>
+      <span class="badge rounded-pill text-bg-success"><a class="link-light text-decoration-none" href="{{ url_for('data', name='zipf', format='json') }}">raw data</a></span>
+    </div>
+    <p>La legge di Zipf è una legge empirica formulata utilizzando la statistica matematica che si riferisce alla frequenza delle parole nei linguaggi naturali. Afferma che data una certa raccolta di enunciati in linguaggio naturale, la frequenza di qualsiasi parola è inversamente proporzionale al suo rango nella tabella di frequenza. Quindi la parola più frequente si verificherà approssimativamente due volte più spesso della seconda parola più frequente, tre volte più spesso della terza parola più frequente, ecc.</p>
+    <img class="img-fluid" src="{{ url_for('static', filename='plots/zipf.png') }}" alt="zipf's law graph">
+    <p>Anche in questa istanza, la legge di Zipf è stata verificata: la frequenza statistica delle parole segue fedelmente la curva del decadimento esponenziale.</p>
+  </div>
+{% endblock %}
