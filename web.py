@@ -11,14 +11,16 @@ MAPPING_HTML_JSON = {
     'followed-words': 'followed_words'
 }
 
-# Home route
 @app.route('/')
 def home():
+    """Home route"""
+
     return render_template('home.html')
 
-# Data routes with name parameter
 @app.route('/data/<string:name>')
 def data(name):
+    """Data routes with name parameter"""
+
     if name.lower() in MAPPING_HTML_JSON:
         template = f"{name}.html"
         json = f'{MAPPING_HTML_JSON[name]}.json'
@@ -26,8 +28,9 @@ def data(name):
     else:
         abort(404)
 
-# Helper function to return HTML or JSON based on the format parameter
 def html_or_json(template, json):
+    """Helper function to return HTML or JSON based on the format parameter."""
+
     format_arg = request.args.get('format', default='html', type=str)
     if format_arg == 'json':
         return send_from_directory('data', json)
