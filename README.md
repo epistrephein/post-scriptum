@@ -26,6 +26,7 @@ python web.py
 ```
 
 and visit http://localhost:3000/ to view the website.
+
 NOTE: The website runs on port 3000 instead of default 5000 because on macOS it is used
 by internal utilities and [cause conflicts when the server is not running](https://stackoverflow.com/a/72797062).
 
