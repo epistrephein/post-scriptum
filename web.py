@@ -11,6 +11,12 @@ MAPPING_HTML_JSON = {
     'followed-words': 'followed_words'
 }
 
+@app.errorhandler(404)
+def page_not_found(e):
+    """Not found page"""
+
+    return render_template('404.html'), 404
+
 @app.route('/')
 def home():
     """Home route"""
