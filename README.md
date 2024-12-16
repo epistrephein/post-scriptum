@@ -19,10 +19,10 @@ To run the project, first install the dependencies
 pip install -r requirements.txt
 ```
 
-then launch the Flask server
+then invoke the default task to launch the Flask server
 
 ```
-python web.py
+invoke
 ```
 
 and visit http://localhost:3000/ to view the website.
