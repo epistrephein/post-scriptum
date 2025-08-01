@@ -4,16 +4,19 @@ Linguistic analysis Python app for the italian online newspaper Il Post.
 
 ## Description
 
-The aim of the project is to perform a linguistic analysis on the articles of the online newspaper Il Post and visualize the results with some graphs on a Flask web application.  
-We start by scraping the articles from the website using the `requests` and `BeautifulSoup` libraries and persiting the dataset to JSON.  
-Then we perform the linguistic analysis using the `spaCy` library, which includes tokenization, lemmatization, part-of-speech tagging and named entity recognition.  
+The aim of the project is to perform a linguistic analysis on the articles of the online newspaper Il Post and visualize the results with some graphs on a Flask web application.
+
+We start by scraping the articles from the website using the `requests` and `BeautifulSoup` libraries and persiting the dataset to JSON.
+
+Then we perform the linguistic analysis using the `spaCy` library, which includes tokenization, lemmatization, part-of-speech tagging and named entity recognition.
+
 Finally, we generate some graphs using the `matplotlib` library to visualize the results.
 
 ## Usage
 
 The project is a Flask web application that displays 4 linguistic analyses with some graphs and comments.
 
-To run the project, first install the dependencies
+To run the project locally, first install the dependencies
 
 ```
 pip install -r requirements.txt
@@ -30,7 +33,7 @@ and visit http://localhost:3000/ to view the website.
 NOTE: The website runs on port 3000 instead of default 5000 because on macOS it is used
 by internal utilities and [cause conflicts when the server is not running](https://stackoverflow.com/a/72797062).
 
-### Python files involved
+### Repository structure
 
 All the data and graphs that constitutes the analyses are already present in the repository, but can be regenerated using the scripts included.
 

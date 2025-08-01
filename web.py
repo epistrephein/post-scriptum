@@ -1,6 +1,7 @@
 """Flask app to display data, plots and descriptions as a website."""
 
 from flask import Flask, request, abort, render_template, send_from_directory
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 app = Flask(__name__)
 
@@ -23,7 +24,7 @@ def home():
 
     return render_template('home.html')
 
-@app.route('/data/<string:name>')
+@app.route('/<string:name>')
 def data(name):
     """Data routes with name parameter"""
 
@@ -43,8 +44,14 @@ def html_or_json(template, json):
 
     return render_template(template)
 
-# The website runs on port 3000 instead of default 5000 because on macOS that port
-# is used by internal utilities and causes conflicts when the server is not running
-# https://stackoverflow.com/a/72797062
+# In production, mount the Flask app under a subpath for reverse proxying via nginx.
+# This ensures all routes are served under /post-scriptum instead of /.
+production = DispatcherMiddleware(None, {
+    '/post-scriptum': app
+})
+
+# Run the Flask app directly for local development.
+# This bypasses DispatcherMiddleware and serves the app on port 3000.
+# Use only for debugging; production uses gunicorn with DispatcherMiddleware.
 if __name__ == '__main__':
     app.run(port=3000, debug=True)
