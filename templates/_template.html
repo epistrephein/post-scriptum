@@ -20,13 +20,18 @@
     </div>
   </header>
 
-  <main class="mb-5">
+  <main class="mb-3">
     {% block content %}
     {% endblock %}
-    <br>
+
+    <div class="text-center mt-3">
+      <a href="https://github.com/epistrephein/post-scriptum" target="_blank" rel="noopener">
+        <img src="{{ url_for('static', filename='img/github-logo.svg') }}" alt="GitHub" width="36" height="36" style="vertical-align: middle;">
+      </a>
+    </div>
   </main>
 
-  <footer class="footer fixed-bottom mt-5 pt-3 pb-1 bg-light">
+  <footer class="footer pt-3 pb-1 bg-light">
     <div class="container">
       <p class="text-body-tertiary text-center small">
         sviluppato da Tommaso Barbato
