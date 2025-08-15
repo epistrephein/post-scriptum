@@ -2,6 +2,7 @@
 
 from flask import Flask, request, abort, render_template, send_from_directory
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
 
@@ -46,6 +47,8 @@ def html_or_json(template, json):
 
 # In production, mount the Flask app under a subpath for reverse proxying via nginx.
 # This ensures all routes are served under /post-scriptum instead of /.
+app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1, x_prefix=1)
+
 production = DispatcherMiddleware(None, {
     '/post-scriptum': app
 })
